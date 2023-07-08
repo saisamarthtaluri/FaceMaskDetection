@@ -1,7 +1,7 @@
-#Building a COVID-19 Face Mask Detection System using Simple CNN
+# Building a COVID-19 Face Mask Detection System using Simple CNN
 
 Introduction:
-In this blog, we will explore the development of a COVID-19 face mask detection system using deep learning techniques. The goal is to build a model that can classify whether a person is wearing a face mask or not. We will utilize the power of convolutional neural networks (CNNs) and the Keras library to achieve this task. The dataset used for training and testing consists of images of individuals with and without face masks.
+In this project, we will explore the development of a COVID-19 face mask detection system using deep learning techniques. The goal is to build a model that can classify whether a person is wearing a face mask or not. We will utilize the power of convolutional neural networks (CNNs) and the Keras library to achieve this task. The dataset used for training and testing consists of images of individuals with and without face masks.
 
 Understanding the Code:
 
@@ -40,9 +40,9 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 We need to specify the paths to the directories containing our training, testing, and validation images. These directories contain subdirectories for the different classes (Mask and Non Mask).
 
 ```python
-train_dir = '/kaggle/input/covid-face-mask-detection-dataset/New Masks Dataset/Train'
-test_dir = '/kaggle/input/covid-face-mask-detection-dataset/New Masks Dataset/Test'
-val_dir = '/kaggle/input/covid-face-mask-detection-dataset/New Masks Dataset/Validation'
+train_dir = '/path to train'
+test_dir = '/path to test'
+val_dir = '/path to validation'
 ```
 
 4. Data Generators:
@@ -111,7 +111,7 @@ history = model.fit(
 Finally, we test our trained model on new images and visualize the results. We define a list of image paths for which we want to make predictions. For each image, we read it using OpenCV, preprocess it, and store it in an array. The model's `predict` method is then used to obtain the predicted probabilities. Based on the probability, we determine whether the person is wearing a mask or not. We visualize the results by drawing bounding boxes around the faces and displaying the label and confidence.
 
 ```python
-image_paths = ['/kaggle/input/covid-face-mask-detection-dataset/New Masks Dataset/Validation/Mask/1701.jpg', '/kaggle/input/covid-face-mask-detection-dataset/New Masks Dataset/Validation/Non Mask/real_00007.jpg']
+image_paths = ['/path to image2.jpg', '/path to image2.jpg']
 
 images = []
 for image_path in image_paths:
@@ -149,12 +149,6 @@ for i, prediction in enumerate(predictions):
 ```
 
 Conclusion:
-In this blog post, we have covered the complete process of building a COVID-19 face mask detection system using deep learning. We started with data preprocessing and augmentation using the `ImageDataGenerator
-
-class from Keras. Then, we designed and trained a convolutional neural network model using the Sequential class from Keras. Finally, we used the trained model to make predictions on new images and visualize the results.
-
-By understanding and implementing the code, we have developed a system that can effectively classify whether a person is wearing a face mask or not. This system can have various applications, including monitoring compliance with face mask regulations in public spaces, enhancing safety measures in healthcare facilities, and assisting in automated screening processes.
-
-With further refinement and training on larger datasets, this model can potentially be deployed in real-world scenarios to help combat the spread of COVID-19. It is important to note that the success and accuracy of the model depend on the quality and diversity of the training data, as well as the chosen model architecture and hyperparameters.
+In this blog post, we have covered the complete process of building a COVID-19 face mask detection system using deep learning. We started with data preprocessing and augmentation using the `ImageDataGenerator class from Keras. Then, we designed and trained a convolutional neural network model using the Sequential class from Keras. Finally, we used the trained model to make predictions on new images and visualize the results. By understanding and implementing the code, we have developed a system that can effectively classify whether a person is wearing a face mask or not. This system can have various applications, including monitoring compliance with face mask regulations in public spaces, enhancing safety measures in healthcare facilities, and assisting in automated screening processes. With further refinement and training on larger datasets, this model can potentially be deployed in real-world scenarios to help combat the spread of COVID-19. It is important to note that the success and accuracy of the model depend on the quality and diversity of the training data, as well as the chosen model architecture and hyperparameters.
 
 Deep learning-based solutions like this face mask detection system showcase the potential of AI and computer vision in addressing public health challenges. By leveraging such technology, we can contribute to creating safer environments and minimizing the risk of virus transmission.
